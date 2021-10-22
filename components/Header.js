@@ -19,6 +19,12 @@ function Header({ placeholder }) {
   const [numberOfGuests, setNumberOfGuests] = useState(1)
   const router = useRouter()
 
+  const selectionRange = {
+    startDate: startDate,
+    endDate: endDate,
+    key: 'selection',
+  }
+
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate)
     setEndDate(ranges.selection.endDate)
@@ -37,11 +43,6 @@ function Header({ placeholder }) {
         numberOfGuests,
       },
     })
-  }
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    keys: 'selection',
   }
 
   return (
